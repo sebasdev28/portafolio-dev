@@ -33,9 +33,8 @@ Diseñado con enfoque en **rendimiento**, **accesibilidad** y **experiencia de u
 - 📱 Diseño completamente **responsivo**.  
 - 📦 Componentes modulares con Astro.  
 - 🖼 Optimización de imágenes.  
-- 🧩 Secciones principales: *Hero, Sobre mí, Proyectos, Experiencia, Contacto.*  
-- 💜 Footer con dedicatoria personal.
-
+- 🧩 Secciones principales: *Hero, Sobre mí, Proyectos, Experiencia, Contacto.*
+  
 ---
 
 ## 🧑‍💻 Proyectos incluidos
