@@ -1,0 +1,121 @@
+---
+import ThemeToggle from "./ThemeToggle.astro"
+
+const navItems = [
+  {
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/#experiencia",
+  },
+  {
+    title: "Proyectos",
+    label: "proyectos",
+    url: "/#proyectos",
+  },
+  {
+    title: "Sobre mí",
+    label: "sobre-mi",
+    url: "/#sobre-mi",
+  },
+  {
+    title: "Contacto",
+    label: "contacto",
+    url: "mailto:sebastian.becerra.durand@gmail.com",
+  },
+]
+---
+<header
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+>
+  <nav
+    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+  >
+    {
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
+    <ThemeToggle />
+  </nav>
+</header>
+
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section")
+    const navItems = document.querySelectorAll("header nav a")
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-blue-500")
+            } else {
+              item.classList.remove("text-blue-500")
+            }
+          })
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    })
+
+    sections.forEach((section) => {
+      observer.observe(section)
+    })
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect()
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section)
+        })
+      }
+    }
+  })
+</script>
+
+<style>
+@reference "tailwindcss";
+
+  nav {
+    /* I've corrected the animation name typo from "nav-shadown" to "nav-shadow" */
+    animation: nav-shadow 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  /* This rule is correct and should remain */
+  nav {
+    @apply dark:bg-gray-800/90 bg-white/50;
+  }
+
+  @keyframes nav-shadow {
+    /* An animation starts from the element's base styles. 
+      We only need to define the final state ("to" or "100%").
+    */
+    to {
+      /* These are the raw CSS properties for: */
+      /* shadow-lg ring-1 backdrop-blur ring-white/10 */
+      box-shadow:
+        0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1),
+        0 0 0 1px rgb(255 255 255 / 0.1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px); /* Vendor prefix for Safari */
+    }
+  }
+</style>

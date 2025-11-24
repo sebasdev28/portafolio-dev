@@ -1,0 +1,49 @@
+---
+ 
+import Experience from "../components/Experience.astro";
+ 
+import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import Code from "../components/icons/Code.astro";
+import Projects from "../components/Projects.astro";
+import Aboutme from "../components/Aboutme.astro";
+import Profilecheck from "../components/icons/Profilecheck.astro";
+import TitleSection from "../components/TitleSection.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<Layout
+  title="Portafolio de Sebastian - Desarrollador y Programador Web"
+  description="Contrata a Sebastian para crear aplicación web o móvil, rápida y responsiva. Experimentado en el desarrollo con HTML, CSS, JavaScript, PHP y bases de datos."
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero />
+    </SectionContainer>
+    <div class="space-y-24">
+    <SectionContainer id="experiencia">
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+        <Briefcase class="size-6" />
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+    <SectionContainer id="proyectos">
+      <TitleSection>
+         <Code class="size-7" />
+        Proyectos
+      </TitleSection>
+      <Projects />
+    </SectionContainer>
+    <SectionContainer id="sobre-mi">
+      <h2
+        class="text-xl font-semibold mb-6 flex gap-x-2 mt-10 items-center text-black/80 dark:text-white/80"
+      >
+        <Profilecheck class="size-7" /> Sobre mí
+      </h2>
+      <Aboutme />
+    </SectionContainer>
+  </main>
+  
+</Layout>
