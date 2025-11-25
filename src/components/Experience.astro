@@ -1,26 +1,35 @@
 ---
 import ExperienceItem from "./icons/ExperienceItem.astro";
 
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations } from "../i18n/utils";
+import { languageList } from "../i18n/ui";
+import LanguageToggle from "../components/LanguageToggle.astro";
+type Lang = keyof typeof languageList;
+
+const currentLang = (Astro.currentLocale ?? "es") as Lang;
+const translateLabels = useTranslations(currentLang);
+
 const EXPERIENCIE = [
   {
-    date: "Actualidad",
-    title: "Gestión Administrativa y Finanzas – Transporte Sebas",
-    description:
-      "Encargado del área de finanzas y apoyo en logística. Lideré la digitalización de procesos de facturación mediante plantillas automatizadas, mejorando la eficiencia administrativa. Actualmente gestiono reportes financieros y organizo rutas de transporte, con planes de desarrollar una aplicación web para optimizar la planificación.",
+    date: translateLabels("experiences.job1.date"),
+    title: translateLabels("experiences.job1.title"),
+    description: translateLabels("experiences.job1.description"),
     link: "#",
   },
   {
-    date: "2024 - 2025",
-    title: "Mediar – Landing page VR Simulation",
-    description:
-      "Proyecto personal: desarrollo de una landing page responsiva con HTML, CSS, JavaScript y Bootstrap. Incluye animaciones, formularios conectados a Excel Online mediante App Script, integración de un sistema de mapeado y despliegue en Netlify.",
+    date: translateLabels("experiences.job2.date"),
+    title: translateLabels("experiences.job2.title"),
+    description: translateLabels("experiences.job2.description"),
+    link: "#",
   },
   {
-    date: "2023 – Presente",
-    title: "Exploración en WordPress y Wix",
-    description:
-      "Proyectos personales de aprendizaje en diseño y personalización de sitios web, adquiriendo experiencia práctica en SEO básico y funciones de comercio electrónico.",
-  },
+    date: translateLabels("experiences.job3.date"),
+    title: translateLabels("experiences.job3.title"),
+    description: translateLabels("experiences.job3.description"),
+    link: "#",
+    },
+ 
 ];
 ---
 
@@ -29,6 +38,7 @@ const EXPERIENCIE = [
     EXPERIENCIE.map((experiencie) => (
       <li class="mb-10 ms-4">
         <ExperienceItem {...experiencie} />
+
       </li>
     ))
   }

@@ -1,16 +1,26 @@
 ---
 const personalImageAlt = "Sebastian Becerra Durand";
-import Badge from "./Badge.astro"
-import LinkedInIcon from "./icons/LinkedIn.astro"
-import MailIcon from "./icons/Mail.astro"
-import SocialPill from "./SocialPill.astro"
+import Badge from "./Badge.astro";
+import LinkedInIcon from "./icons/LinkedIn.astro";
+import MailIcon from "./icons/Mail.astro";
+import SocialPill from "./SocialPill.astro";
+
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations } from "../i18n/utils";
+import { languageList } from "../i18n/ui";
+import LanguageToggle from "./LanguageToggle.astro";
+
+type Lang = keyof typeof languageList;
+
+const currentLang = (Astro.currentLocale ?? "es") as Lang;
+const translateLabels = useTranslations(currentLang);
 ---
 
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-16"
-      src="https://media.licdn.com/dms/image/v2/D4E03AQE-fCHRPMVPcA/profile-displayphoto-scale_200_200/B4EZmjlHQuKwAY-/0/1759386039880?e=1762992000&v=beta&t=o5J9W0Mq7f4e81VrMye5h0-44HYKrdE-XvXpbGGWP_M"
+      src=" https://media.licdn.com/dms/image/v2/D4E03AQE-fCHRPMVPcA/profile-displayphoto-scale_200_200/B4EZmjlHQuKwAY-/0/1759386039880?e=1765411200&v=beta&t=C1wheZejqvy5lfb07c0nbWMwDwiml3alVJchpSD9g60"
       alt={personalImageAlt}
     />
     <a
@@ -19,31 +29,27 @@ import SocialPill from "./SocialPill.astro"
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Disponible para trabajar</Badge>
+      <Badge>{translateLabels("hero.badge")}</Badge>
     </a>
   </div>
   <h1
+    set:html={translateLabels("hero.title")}
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-  >
-    Hey, soy Sebastian 
-  </h1>
+  />
   <p
+    set:html={translateLabels("hero.subtitle")}
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    Estudiante de <strong class="text-yellow-500 ">Ingeniería de Software</strong> en Lima, Perú. Desarrollador web
-        con enfoque en la creación de interfaces modernas, eficientes y
-        responsivas usando <strong class="text-yellow-500 ">HTML, CSS, JavaScript, PHP y Astro</strong>. Interesado en el
-        diseño funcional y las soluciones digitales que generan impacto real.
-      
-  </p>
+  />
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:sebastian.becerra.durand@gmail.com">
       <MailIcon class="size-4" />
-      Contáctame
+      {translateLabels("hero.contactbutton")}
     </SocialPill>
-    <SocialPill href="https://linkedin.com/in/sebastian-uriel-becerra-durand-17544432b">
+    <SocialPill
+      href="https://linkedin.com/in/sebastian-uriel-becerra-durand-17544432b"
+    >
       <LinkedInIcon class="size-4" />
-      LinkedIn
+      {translateLabels("hero.linkedinbutton")}
     </SocialPill>
   </nav>
 </div>

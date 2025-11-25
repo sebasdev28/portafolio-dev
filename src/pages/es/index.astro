@@ -1,24 +1,22 @@
 ---
  
-import Experience from "../components/Experience.astro";
+import Experience from "../../components/Experience.astro";
 
-import CertificateIcon from "../components/icons/CertificateIcon.astro";
-import Layout from "../layouts/Layout.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import Briefcase from "../components/icons/Briefcase.astro";
-import Code from "../components/icons/Code.astro";
-import Projects from "../components/Projects.astro";
-import Aboutme from "../components/Aboutme.astro";
-import Profilecheck from "../components/icons/Profilecheck.astro";
-import TitleSection from "../components/TitleSection.astro";
-import Hero from "../components/Hero.astro";
-import Certificates from "../components/Certificates.astro";
-
+import CertificateIcon from "../../components/icons/CertificateIcon.astro";
+import Layout from "../../layouts/Layout.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import Briefcase from "../../components/icons/Briefcase.astro";
+import Code from "../../components/icons/Code.astro";
+import Projects from "../../components/Projects.astro";
+import Aboutme from "../../components/Aboutme.astro";
+import Profilecheck from "../../components/icons/Profilecheck.astro";
+import TitleSection from "../../components/TitleSection.astro";
+import Hero from "../../components/Hero.astro";
+import Certificates from "../../components/Certificates.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { useTranslations } from "../i18n/utils";
-import { languageList } from "../i18n/ui";
-import LanguageToggle from "../components/LanguageToggle.astro";
-
+import { useTranslations } from "../../i18n/utils";
+import { languageList } from "../../i18n/ui";
+import LanguageToggle from "../../components/LanguageToggle.astro";
 type Lang = keyof typeof languageList;
 
 const currentLang = (Astro.currentLocale ?? "es") as Lang;

@@ -7,6 +7,20 @@ import Netlify from "./icons/Netlify.astro";
 import LinkButton from "./LinkButton.astro";
 import Link from "./icons/Link.astro";
 import GitHub from "./icons/GitHub.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import TypeScript from "./icons/Typescript.astro";
+import API from "./icons/Api.astro";
+
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations } from "../i18n/utils";
+import { languageList } from "../i18n/ui";
+import LanguageToggle from "../components/LanguageToggle.astro";
+type Lang = keyof typeof languageList;
+
+const currentLang = (Astro.currentLocale ?? "es") as Lang;
+const translateLabels = useTranslations(currentLang);
+ 
 
 const TAGS = {
   HTML5: {
@@ -34,18 +48,56 @@ const TAGS = {
     class: "bg-black text-white",
     icon: Netlify,
   },
+  AstroIcon: {
+    name: "Astro",
+    class: "bg-black text-white",
+    icon: AstroIcon,
+  },
+  Tailwind: {
+    name: "Tailwind",
+    class: "bg-black text-white",
+    icon: Tailwind,
+  },
+  TypeScript: {
+    name: "TypeScript",
+    class: "bg-black text-white",
+    icon: TypeScript,
+  },
+  API: {
+    name: "API",
+    class: "bg-black text-white",
+    icon: API,
+  },
 };
 
 const PROJECTS = [
   {
-    title: "MediAR - Landing Page",
-    description:
-      "Landing page responsiva desarrollada con HTML, CSS, JavaScript y Bootstrap, con animaciones, formularios conectados a Excel Online mediante App Script y un sistema de mapeado para ubicar el instituto.",
+    title: translateLabels("projects.project1.title"),
+    description: translateLabels("projects.project1.description"),
     link: "https://mediarofficial.netlify.app/",
     github: "https://github.com/SurgeonSim-MediAR/IHC_MediAR_LandingPage",
     image: "/projects/project1.webp",
     tags: [TAGS.HTML5, TAGS.CSS, TAGS.JavaScript, TAGS.Boostrap, TAGS.Netlify],
   },
+
+  {
+    title: translateLabels("projects.project2.title"),
+    description: translateLabels("projects.project2.description"),
+    link: "https://project-sticker-monkey.netlify.app/",
+    github: "https://github.com/sebasdev28/Project-Sticker-Monkey",
+    image: "/projects/project2.webp",
+    tags: [TAGS.AstroIcon, TAGS.Tailwind, TAGS.JavaScript, TAGS.Netlify],
+  },
+  
+  {
+    title: translateLabels("projects.project3.title"),
+    description: translateLabels("projects.project3.description"),
+    link: "https://petsalud-vet.netlify.app/",
+    github: "https://github.com/SLexiDev/petsalud-landing",
+    image: "/projects/project4.webp",
+    tags: [TAGS.AstroIcon, TAGS.Tailwind, TAGS.JavaScript, TAGS.Netlify],
+  },
+
   // Agrega más proyectos según sea necesario
 ];
 ---
@@ -53,52 +105,56 @@ const PROJECTS = [
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex gap-4 mt-4 flex-wrap lg:flex-nowrap">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex gap-4 mt-4 flex-wrap lg:flex-nowrap ">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-                  
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  {translateLabels("projects.code.button")}
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  {translateLabels("projects.preview.button")}
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
-

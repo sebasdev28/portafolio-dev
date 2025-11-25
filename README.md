@@ -1,60 +1,61 @@
-# Astro Starter Kit: Basics
+# 🌐 Portafolio Web – Sebastian Uriel Becerra Durand
 
-```sh
-npm create astro@latest -- --template basics
-```
+[![Astro](https://img.shields.io/badge/Astro-FF5A03?logo=astro&logoColor=white)]()
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwindcss&logoColor=white)]()
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)]()
+[![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)]()
+[![Status](https://img.shields.io/badge/Status-En%20desarrollo-blue)]()
 
-<!-- ASTRO:REMOVE:START -->
+Portafolio personal desarrollado con **Astro**, **Tailwind CSS** y **JavaScript**.  
+Incluye información sobre mi formación, habilidades técnicas, experiencia, proyectos
+y métodos de contacto.  
+Diseñado con enfoque en **rendimiento**, **accesibilidad** y **experiencia de usuario**.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+---
 
-<!-- ASTRO:REMOVE:END -->
+## 🚀 Tecnologías utilizadas
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Astro**
+- **Tailwind CSS**
+- **JavaScript**
+- HTML & CSS
+- Git & GitHub
+- Responsive Design
+- Google Fonts  
+- Animaciones CSS
 
-<!-- ASTRO:REMOVE:START -->
+---
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🎨 Características principales
 
-<!-- ASTRO:REMOVE:END -->
+- ⚫ **Modo oscuro y claro** con detección automática del sistema.  
+- 🔵 Navegación dinámica con **Intersection Observer** (la sección activa se resalta).  
+- 📱 Diseño completamente **responsivo**.  
+- 📦 Componentes modulares con Astro.  
+- 🖼 Optimización de imágenes.  
+- 🧩 Secciones principales: *Hero, Sobre mí, Proyectos, Experiencia, Contacto.*
+  
+---
 
-## 🚀 Project Structure
+## 🧑‍💻 Proyectos incluidos
 
-Inside of your Astro project, you'll see the following folders and files:
+### **MediAR – Landing page de realidad virtual**
+Landing responsiva creada con HTML, CSS, JavaScript y Bootstrap.  
+Incluye animaciones, formularios conectados a Excel mediante App Script y mapeado dinámico.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+### **StickerMonkey – Sitio promocional**
+Landing de estilo visual simple, orientada a mostrar productos y UI.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### **Cherry Girl – Mini landing**
+Proyecto ligero utilizado para práctica de UI y estilos modernos.
 
-## 🧞 Commands
+> **Nota:** Se agregarán enlaces individuales cuando los repositorios estén publicados.
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📦 Instalación y ejecución
 
-## 👀 Want to learn more?
+Clonar el repositorio:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+git clone https://github.com/sebasdev28/portafolio-dev

@@ -1,0 +1,55 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { languageList } from "../i18n/ui";
+import { useTranslations } from "../i18n/utils";
+import Language from "./icons/Language.astro";
+
+type Lang = keyof typeof languageList;
+
+const currentLang = (Astro.currentLocale ?? "es") as Lang;
+const t = useTranslations(currentLang);
+const buttonLabel = t("header.language");
+---
+
+<details class="relative ml-1 mr-1 group">
+  <!-- Botón -->
+  <summary
+    class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-800 cursor-pointer list-none select-none"
+  >
+    <span class="flex items-center gap-1 text-sm">
+      <Language class="size-4" />
+      {buttonLabel}
+    </span>
+
+    <!-- Flecha -->
+    <span
+      aria-hidden="true"
+      class="transition-transform duration-200 group-open:rotate-180"
+    >
+      ▾
+    </span>
+  </summary>
+
+  <!-- Dropdown -->
+  <div
+    class="absolute right-0 mt-2 rounded-md bg-white dark:bg-gray-900 shadow p-2 z-40 min-w-[80px]"
+  >
+    {
+      (Object.entries(languageList) as [Lang, string][]).map(([key, label]) => (
+        <a
+          href={getRelativeLocaleUrl(key, "/")}
+          class="block px-2 py-1 text-sm rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+        >
+          {label}
+        </a>
+      ))
+    }
+  </div>
+</details>
+
+<style>
+  /* Asegura que el toggle no empuje otros elementos en el header */
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
