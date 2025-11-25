@@ -46,6 +46,7 @@ Incluye animaciones, formularios conectados a Excel mediante App Script y mapead
 ### **StickerMonkey – Sitio promocional**
 Landing de estilo visual simple, orientada a mostrar productos y UI.
 
+<<<<<<< HEAD
 ### **Cherry Girl – Mini landing**
 Proyecto ligero utilizado para práctica de UI y estilos modernos.
 
@@ -57,5 +58,15 @@ Proyecto ligero utilizado para práctica de UI y estilos modernos.
 
 Clonar el repositorio:
 
+=======
+> **Nota:** Se agregarán enlaces individuales cuando los repositorios estén publicados.
+
+---
+
+## 📦 Instalación y ejecución
+
+Clonar el repositorio:
+
+>>>>>>> c2ff51a84f2bf0567e8273c29a50c0b4a3c8bccd
 ```bash
 git clone https://github.com/sebasdev28/portafolio-dev
