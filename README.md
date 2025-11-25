@@ -46,9 +46,6 @@ Incluye animaciones, formularios conectados a Excel mediante App Script y mapead
 ### **StickerMonkey – Sitio promocional**
 Landing de estilo visual simple, orientada a mostrar productos y UI.
 
-### **Cherry Girl – Mini landing**
-Proyecto ligero utilizado para práctica de UI y estilos modernos.
-
 > **Nota:** Se agregarán enlaces individuales cuando los repositorios estén publicados.
 
 ---
