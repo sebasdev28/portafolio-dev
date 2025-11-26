@@ -14,10 +14,12 @@ const { title, description } = Astro.props;
  
 const currentLang = Astro.currentLocale || 'es';
 
+ 
+
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="dark">
  <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -41,7 +43,7 @@ const currentLang = Astro.currentLocale || 'es';
 
     <style is:global>
       :root {
-        color-scheme: light dark;
+        color-scheme: dark;
       }
 
       html {
