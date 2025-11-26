@@ -69,7 +69,7 @@ export const labels = {
       "Certificación que valida conocimientos básicos del marco ágil Scrum, incluyendo roles, eventos y artefactos esenciales para la gestión de proyectos y trabajo colaborativo.",
     //CERTIFICATE 2 TRANSLATIONS IN SPANISH
     "certificates.course2.title":
-      "Programming for Everybody - UNiversity of Michigan",
+      "Programming for Everybody - University of Michigan",
     "certificates.course2.description":
       "Especialización completa en programación con Python, que abarca fundamentos, estructuras de datos, manejo de archivos, consumo de APIs, acceso a bases de datos SQL y procesamiento de información.",
     //CERTIFICATE 3 TRANSLATIONS IN SPANISH
@@ -79,7 +79,7 @@ export const labels = {
       "Formación tecnica en bases de datos NoSQL con MongoDB University. Incluye fundamentos de MongoDB, modelo de documentos, CRUD, Aggregation Framework, transacciones, MongoDB Atlas, indexación y desarrollo backend con PHP + MongoDB.",
     //CERTIFICATE 4 TRANSLATIONS IN SPANISH
     "certificates.course4.title":
-      "Programming for Everybody - UNiversity of Michigan",
+      "MongoDB PHP Developer Path – MongoDB University",
     "certificates.course4.description":
       "Certificación enfocada en la integración de MongoDB con PHP. Cubre conexión al servidor, consultas CRUD, manejo de colecciones, agregaciones y buenas prácticas para desarrollar aplicaciones backend usando PHP + MongoDB.",
     //ABOUT ME TRANSLATIONS IN SPANISH
@@ -155,7 +155,7 @@ export const labels = {
       "Certification that validates basic knowledge of the Agile Scrum framework, including essential roles, events, and artifacts for project management and collaborative work.",
     //CERTIFICATE 2 TRANSLATIONS IN ENGLISH
     "certificates.course2.title":
-      "Programming for Everybody - UNiversity of Michigan",
+      "Programming for Everybody - University of Michigan",
     "certificates.course2.description":
       "Comprehensive specialization in programming with Python, covering fundamentals, data structures, file handling, API consumption, SQL database access, and information processing.",
     //CERTIFICATE 3 TRANSLATIONS IN ENGLISH
